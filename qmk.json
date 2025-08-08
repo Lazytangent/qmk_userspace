@@ -5,6 +5,10 @@
         ["keychron/q2/ansi_encoder", "lazytangent"],
         ["splitkb/elora/rev1", "lazytangent"],
         ["dztech/dz60rgb_ansi/v2_1", "lazytangent"],
-        ["dztech/dz65rgb/v3", "lazytangent"]
+        ["dztech/dz65rgb/v3", "lazytangent"],
+        ["handwired/dactyl_manuform/5x6", "lazytangent"],
+        ["keychron/q8/ansi", "lazytangent"],
+        ["lily58", "lazytangent"],
+        ["moonlander", "lazytangent"]
     ]
 }
