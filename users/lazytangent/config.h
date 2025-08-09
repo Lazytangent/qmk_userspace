@@ -4,3 +4,4 @@
 #define UNICODE_CYCLE_PERSIST false
 
 #define NKRO_DEFAULT_ON true
+#define LEADER_PER_KEY_TIMING
