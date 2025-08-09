@@ -1,3 +1,6 @@
 SRC += lazytangent.c
 
 NKRO_ENABLE = yes
+UNICODE_COMMON = yes
+LEADER_ENABLE = yes
+CAPS_WORD_ENABLE = yes
