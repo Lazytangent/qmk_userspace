@@ -18,7 +18,6 @@
 
 #include QMK_KEYBOARD_H
 
-#define ALT_CTL A(KC_LCTL)
 #define SPC_LT1 LT(1, KC_SPC)
 #define ENT_LT2 LT(2, KC_ENT)
 
