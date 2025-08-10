@@ -16,8 +16,7 @@
 
 #include QMK_KEYBOARD_H
 
-#define KC_TASK LGUI(KC_TAB)
-#define KC_FLXP LGUI(KC_E)
+#define ALT_CTL A(KC_RCTL)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_ansi_67(
@@ -37,25 +36,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [2] = LAYOUT_ansi_67(
-        KC_ESC,  KC_BRID, KC_BRIU, _______, _______, RGB_VAD, RGB_VAI, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_VOLD,  KC_VOLU,   QK_BOOT,          RGB_TOG,
-        RGB_TOG, RGB_MOD, RGB_VAI, RGB_HUI, RGB_SAI, RGB_SPI, _______, _______, _______, _______, _______, _______,  _______,   _______,          _______,
-        _______, RGB_RMOD,RGB_VAD, RGB_HUD, RGB_SAD, RGB_SPD, _______, _______, _______, _______, _______, _______,             _______,          _______,
-        _______,          _______, _______, _______, _______, _______, NK_TOGG, _______, _______, _______, _______,             _______, _______,
-        _______, _______, _______,                            _______,                            _______, _______,  MO(4),     _______, _______, _______
+        KC_ESC,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______,   QK_BOOT,          _______,
+        _______, MS_BTN2, MS_UP,   MS_BTN1, MS_WHLU, _______, _______, _______, _______, _______, _______, _______,  _______,   QK_BOOT,          _______,
+        _______, MS_LEFT, MS_DOWN, MS_RGHT, MS_WHLD, _______, _______, _______, _______, _______, _______, _______,             _______,          _______,
+        _______,          _______, MS_WHLL, MS_WHLR, _______, _______, NK_TOGG, _______, _______, _______, _______,             _______, _______,
+        _______, _______, _______,                            _______,                            ALT_CTL, _______,  MO(4),     _______, _______, _______
     ),
 
     [3] = LAYOUT_ansi_67(
-        KC_GRV,  KC_BRID, KC_BRIU, KC_TASK, KC_FLXP, RGB_VAD, RGB_VAI, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_VOLD,  KC_VOLU,   QK_BOOT,          RGB_TOG,
-        RGB_TOG, RGB_MOD, RGB_VAI, RGB_HUI, RGB_SAI, RGB_SPI, _______, _______, _______, _______, _______, _______,  _______,   _______,          _______,
-        _______, RGB_RMOD,RGB_VAD, RGB_HUD, RGB_SAD, RGB_SPD, _______, _______, _______, _______, _______, _______,             _______,          _______,
+        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,   KC_F12,    QK_BOOT,          _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______,   QK_BOOT,          _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,             _______,          _______,
         _______,          _______, _______, _______, _______, _______, NK_TOGG, _______, _______, _______, _______,             _______, _______,
-        _______, _______, _______,                            _______,                            _______, MO(4),    _______,   _______, _______, _______
+        _______, _______, _______,                            _______,                            KC_MEH,  MO(4),    _______,   _______, _______, _______
     ),
 
     [4] = LAYOUT_ansi_67(
-        KC_TILD, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,   KC_F12,    _______,          _______,
-        RGB_TOG, RGB_MOD, RGB_VAI, RGB_HUI, RGB_SAI, RGB_SPI, _______, _______, _______, _______, _______, _______,  _______,   _______,          _______,
-        _______, RGB_RMOD,RGB_VAD, RGB_HUD, RGB_SAD, RGB_SPD, _______, _______, _______, _______, _______, _______,             _______,          _______,
+        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,   KC_F12,    _______,          _______,
+        RM_TOGG, RM_NEXT, RM_HUEU, RM_SATU, RM_VALU, RM_SPDU, _______, _______, _______, _______, _______, _______,  _______,   _______,          _______,
+        _______, RM_PREV, RM_HUED, RM_SATD, RM_VALD, RM_SPDD, _______, _______, _______, _______, _______, _______,             _______,          _______,
         _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,             _______, _______,
         _______, _______, _______,                            _______,                            _______, _______,  _______,   _______, _______, _______
     )
@@ -65,8 +64,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [1] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [2]     = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI) },
-    [3]     = { ENCODER_CCW_CW(RGB_HUD, RGB_HUI) },
-    [4]     = { ENCODER_CCW_CW(RGB_RMOD,RGB_MOD) },
+    [2]     = { ENCODER_CCW_CW(RM_HUED, RM_HUEU) },
+    [3]     = { ENCODER_CCW_CW(RM_SATD, RM_SATU) },
+    [4]     = { ENCODER_CCW_CW(RM_VALD, RM_VALU) },
 };
 #endif
