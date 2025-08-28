@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+./util/uf2conv.py --deploy pavlov.uf2

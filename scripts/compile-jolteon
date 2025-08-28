@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+qmk compile \
+    --keyboard ydkb/jolteon_mx \
+    --keymap lazytangent
+
+./util/uf2conv.py \
+    --base 0x8004000 \
+    --convert \
+    --family 0x9d5beef1 \
+    --output $(date +%Y%m%dT%H%M%S)-ydkb_jolteon_mx_lazytangent.uf2 \
+    ydkb_jolteon_mx_lazytangent.bin

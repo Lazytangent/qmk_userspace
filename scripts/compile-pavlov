@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+make ydkb/jolteon_mx:pavlov_vial
+
+./util/uf2conv.py \
+    --base 0x8004000 \
+    --convert \
+    --family 0x9d5beef1 \
+    --output $(date +%Y%m%dT%H%M%S)-pavlov.uf2 \
+    ydkb_jolteon_mx_pavlov_vial.bin
