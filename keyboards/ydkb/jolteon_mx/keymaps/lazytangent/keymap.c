@@ -17,14 +17,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
     {_______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
   }
 };
-
-void enter_bootloader(void) {
-    clear_keyboard();
-    volatile uint32_t *uf2bl_backup_reg = (uint32_t*)0x20004000;
-    *uf2bl_backup_reg = 0x9d5bfc2bUL;
-    NVIC_SystemReset();
-}
-
-void restart_usb_driver(USBDriver *usbp) {
-    NVIC_SystemReset();
-}
