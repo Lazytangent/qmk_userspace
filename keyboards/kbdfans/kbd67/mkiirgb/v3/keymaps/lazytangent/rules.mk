@@ -1,0 +1,5 @@
+MCU = atmega32u4
+BOOTLOADER = atmel-dfu
+
+COMMAND_ENABLE = no
+CAPS_WORD_ENABLE = yes
